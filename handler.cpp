@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
   string dataFile;
   string newFile;
   string tableName;
+  string testString = "fortnite";
 
   if(argc < 3)
     {
@@ -28,12 +29,29 @@ int main(int argc, char *argv[])
   tableName = argv[0];
   dataFile = argv[1];
   newFile = argv[2];
-  
-  
 
-  // Get file
+  cout << "The table name is " << tableName << endl;
+  cout << "The datafile is " << dataFile << endl;
+  cout << "The file we are writing to is " << newFile << endl;
 
-  // Read line.
+  cout << "Test of the escape lines" << endl;
+  cout << "\'" << testString << "\'" << endl;
+
+  ifstream data;
+  ofstream finisher;
+  string line;
+
+  
+  do
+    {
+      // take line from data file
+      getline(cin, line);
+
+      // Convert it to the proper format
+      finisher << "\'" << line << "\'" << endl;
+      // insert it into the new file
+    }while(!feof);
+
   // insert the ''s on each line.
   // insert insert it into a new file.
   // 
