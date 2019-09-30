@@ -15,8 +15,7 @@ using namespace std;
 int main(int argc, char *argv[])
 {
   // Variables
-  string dataFile;
-  string newFile;
+  string fileName;
   string tableName;
   string testString = "fortnite";
 
@@ -26,31 +25,39 @@ int main(int argc, char *argv[])
       exit(0);
     }
 
-  tableName = argv[0];
-  dataFile = argv[1];
-  newFile = argv[2];
-
+  tableName = argv[1];
+  fileName = argv[2];
+  char buffer[1024];
+  // Pre-Proccessing outputs
+  cout << "The File you are Running: " << argv[0] << endl;
   cout << "The table name is " << tableName << endl;
-  cout << "The datafile is " << dataFile << endl;
-  cout << "The file we are writing to is " << newFile << endl;
-
+  cout << "The datafile is " << fileName << endl;
+  cout << "----------------------------------" << endl;
   cout << "Test of the escape lines" << endl;
   cout << "\'" << testString << "\'" << endl;
+  cout << "------------------------" << endl;
+  cout << "Test Complete, on to real stuff" << endl;
+  cout << "-----------------------------------" << endl;
 
-  ifstream data;
-  ofstream finisher;
+  // Writing line to grab
   string line;
 
-  
-  do
+  // Datafile Declaration
+  ifstream dataFile;
+  ofstream exitFile;
+  dataFile.open(argv[2]);
+  exitFile.open(argv[3]);
+  while(dataFile.good())
     {
       // take line from data file
-      getline(cin, line);
-
+      dataFile.getline(buffer, sizeof(buffer));
+      string line(buffer);
+      
       // Convert it to the proper format
-      finisher << "\'" << line << "\'" << endl;
+      //cout << line << endl;
+      exitFile << "\'" << line << "\'" << endl;
       // insert it into the new file
-    }while(!feof);
+    }
 
   // insert the ''s on each line.
   // insert insert it into a new file.
