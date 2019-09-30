@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
       
       // Convert it to the proper format
       //cout << line << endl;
-      exitFile << "\'" << line << "\'" << endl;
+      exitFile << "\'" << line << "\'," << endl;
       // insert it into the new file
     }
 
