@@ -13,6 +13,10 @@ using namespace std;
 
 // table, dataFile, newFile, entry number 
 
+// Function Definitions
+bool isNumber(string);
+
+
 int main(int argc, char *argv[])
 {
   // Variables
@@ -58,17 +62,19 @@ int main(int argc, char *argv[])
       if(lineIndex == 1)
       {
         exitFile << "INSERT INTO " << tableName << " VALUES(" << endl;
-
-      // dataFile.getline(buffer, sizeof(buffer));
-      //  string line(buffer);
-	  // exitFile << "\'" << line << "\'" << endl;
-
-       }
+      }
       while(lineIndex < linePer)
 	{
 	  dataFile.getline(buffer, sizeof(buffer));
 	  string line(buffer);
-	  exitFile << "\'" << line << "\'" << endl;
+	  if(isNumber(line))
+	    {
+	      exitFile << line << "," << endl;
+	    }
+	  else
+	    {
+	      exitFile << "\'" << line << "\'" << endl;
+	    }
 	  lineIndex++;
 	}
      
@@ -90,4 +96,16 @@ int main(int argc, char *argv[])
   // insert insert it into a new file.
  
   return 0;
+}
+
+
+// Function I found on Hotjar.com
+bool isNumber(string s)
+{
+  for(int i = 0; i < s.length(); i++)
+    {
+      if(isdigit(s[i]) == false)
+	return false;
+    }
+  return true;
 }
