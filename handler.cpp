@@ -42,6 +42,7 @@ int main(int argc, char *argv[])
   cout << "The table name is " << tableName << endl;
   cout << "The datafile is " << fileName << endl;
   cout << "There are " << linePer << " for each entry" << endl; 
+  linePer++; // Incrementing here to fix the logical error in my while loop
   cout << "----------------------------------" << endl;
  
 
@@ -61,35 +62,36 @@ int main(int argc, char *argv[])
       // If first set of values
       if(lineIndex == 1)
       {
+	// format the insert statemnt
         exitFile << "INSERT INTO " << tableName << " VALUES(" << endl;
       }
       while(lineIndex < linePer)
 	{
+	  // Get the line and store it in a string
 	  dataFile.getline(buffer, sizeof(buffer));
 	  string line(buffer);
+
+	  // If line is an integer ignore the single quotes
 	  if(isNumber(line))
 	    {
 	      exitFile << line << "," << endl;
 	    }
+	  // Else add the single quotes
 	  else
 	    {
-	      exitFile << "\'" << line << "\'" << endl;
+	      exitFile << "\'" << line << "\'," << endl;
 	    }
+	  // increment Index
 	  lineIndex++;
 	}
-     
-      //dataFile.getline(buffer, sizeof(buffer));
-      //string line(buffer);
-      //dataFile.getline(buffer, sizeof(buffer));
-      //exitFile << "\'" << line << "\', " << endl;
-       
  
       if(lineIndex == linePer)
       	{
+	  // Finish off the insert statement
          exitFile << ");" << endl;
+	 // Prep file for next 
          lineIndex = 1;
       	}
-      //exitFile << ");" << endl;
     }
 
   // insert the ''s on each line.

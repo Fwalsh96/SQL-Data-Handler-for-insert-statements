@@ -1,38 +1,38 @@
 INSERT INTO department VALUES(
-'Research'
+'Research',
 5,
 333445555,
-'22-MAY-1978'
+'22-MAY-1978',
 );
 INSERT INTO department VALUES(
-'Administration'
+'Administration',
 4,
 987654321,
-'01-JAN-1985'
+'01-JAN-1985',
 );
 INSERT INTO department VALUES(
-'Headquarters'
+'Headquarters',
 1,
 888665555,
-'19-JUN-1971'
+'19-JUN-1971',
 );
 INSERT INTO department VALUES(
-'Software'
+'Software',
 6,
 111111100,
-'15-MAY-1999'
+'15-MAY-1999',
 );
 INSERT INTO department VALUES(
-'Hardware'
+'Hardware',
 7,
 444444400,
-'15-MAY-1998'
+'15-MAY-1998',
 );
 INSERT INTO department VALUES(
-'Sales'
+'Sales',
 8,
 555555500,
-'01-JAN-1997'
+'01-JAN-1997',
 );
 INSERT INTO department VALUES(
 ,
