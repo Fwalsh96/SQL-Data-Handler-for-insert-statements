@@ -101,13 +101,20 @@ int main(int argc, char *argv[])
 }
 
 
-// Function I found on Hotjar.com
+// Function I found on Hotjar.com modified by Forrest Walsh.
 bool isNumber(string s)
 {
   for(int i = 0; i < s.length(); i++)
     {
       if(isdigit(s[i]) == false)
-	return false;
+	{
+	  // Loop through the rest looking for decimal
+	  return false;
+	}
+      else
+	{
+	  return true;
+	}
+	
     }
-  return true;
 }
