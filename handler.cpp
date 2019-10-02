@@ -15,7 +15,7 @@ using namespace std;
 
 // Function Definitions
 bool isNumber(string);
-
+bool isDate(string);
 
 int main(int argc, char *argv[])
 {
@@ -71,8 +71,12 @@ int main(int argc, char *argv[])
 	  dataFile.getline(buffer, sizeof(buffer));
 	  string line(buffer);
 
+	  if(isDate(line))
+	    {
+	      exitFile << "\'" << line << "\'," << endl;
+	    }
 	  // If line is an integer ignore the single quotes
-	  if(isNumber(line))
+	  else if(isNumber(line))
 	    {
 	      exitFile << line << "," << endl;
 	    }
@@ -117,4 +121,18 @@ bool isNumber(string s)
 	}
 	
     }
+}
+
+bool isDate(string s)
+{
+  int j = 2;
+
+      if(s[j] == '-')
+	{
+	  return true;
+	}
+      else
+	{
+	  return false;
+	}
 }
