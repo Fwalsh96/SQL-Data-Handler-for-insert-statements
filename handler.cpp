@@ -93,6 +93,7 @@ int main(int argc, char *argv[])
       	{
 	  // Finish off the insert statement
          exitFile << ");" << endl;
+	 exitFile << endl;
 	 // Prep file for next 
          lineIndex = 1;
       	}
@@ -125,7 +126,7 @@ bool isNumber(string s)
 
 bool isDate(string s)
 {
-  int j = 2;
+  int j = 4;
 
       if(s[j] == '-')
 	{
