@@ -11,4 +11,4 @@
 	2. ./handle tableName dataFile writingFile
 
 ## Known Bugs ##
-	The program will always print one empty insert statemnt at the bottom.
+	

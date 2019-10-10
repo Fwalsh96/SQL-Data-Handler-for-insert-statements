@@ -73,17 +73,21 @@ int main(int argc, char *argv[])
 
 	  if(isDate(line))
 	    {
-	      exitFile << "\'" << line << "\'," << endl;
+	      exitFile << "\'" << line << "\'";
 	    }
 	  // If line is an integer ignore the single quotes
 	  else if(isNumber(line))
 	    {
-	      exitFile << line << "," << endl;
+	      exitFile << line;
 	    }
 	  // Else add the single quotes
 	  else
 	    {
-	      exitFile << "\'" << line << "\'," << endl;
+	      exitFile << "\'" << line << "\'";
+	    }
+	  if(lineIndex < linePer -1)
+	    {
+	      exitFile << "," << endl;
 	    }
 	  // increment Index
 	  lineIndex++;
