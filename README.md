@@ -9,6 +9,9 @@
 ## Running Program: ##
 	1. g++ handler.cpp -o handle
 	2. ./handle tableName dataFile writingFile
+	   Where tableName is the name of the table.
+	   Where Datafile is the name of the data file you are inserting
+	   Where writingFile is the name of the file you want to write the insert statements to.
 
 ## Known Bugs ##
-	
+   Currenly all known bugs are fixed, feel free to report any issues directly to me.	
