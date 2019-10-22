@@ -1,4 +1,4 @@
-# SQL Data Handler#
+# SQL Data Handler
 This program takes an SQL datafile and formats each file into a SQL script that inserts the data into a table.
 
 
