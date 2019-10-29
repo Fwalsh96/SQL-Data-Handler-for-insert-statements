@@ -141,3 +141,18 @@ bool isDate(string s)
 	  return false;
 	}
 }
+
+bool isTime(string s)
+{
+  int m = 1;
+
+  if(s[m] == ':')
+    {
+      return true;
+    }
+  else
+    {
+      return false;
+    }
+  
+}
