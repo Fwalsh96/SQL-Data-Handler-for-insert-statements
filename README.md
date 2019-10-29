@@ -14,4 +14,4 @@ Ensure before running the program that the datafile only contains data, a count 
 	   Where writingFile is the name of the file you want to write the insert statements to.
 
 ## Known Bugs ##
-   Currenly all known bugs are fixed, feel free to report any issues directly to me.	
+   Currenly the program has trouble handling messy data, I am still looking into why this is occuring. 
